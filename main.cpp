@@ -12,7 +12,31 @@
 
 std::vector<double> generate_data(size_t size)
 {
-    
+    std::vector<double> data(size);
+    std::mt19937 gen(std::random_device{}());
+    std::uniform_real_distribution<> dist(0.0, 100.0);
+
+    for (size_t i = 0; i < size; ++i)
+    {
+        data[i] = dist(gen);
+    }
+    return data;
+}
+
+auto fast_op = [] (double val) 
+{
+    return val * 1.5 - 10.0;
+};
+
+double slow_op(double val)
+{
+double result = val;
+
+for (int i = 0; i < 50; ++i)
+{
+    result = std::sin(result) + std::cos(val);
+}
+return result;
 }
 
 int main() {
