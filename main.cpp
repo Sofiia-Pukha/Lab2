@@ -3,6 +3,7 @@
 #include <algorithm> 
 #include <chrono> 
 #include <random>
+#include <execution> 
 #include <thread> 
 #include <numeric> 
 #include <cmath>
@@ -43,9 +44,18 @@ int main() {
     std::cout << "Laboratory Work: Research transform " << std::endl;
     std::cout << "------------------------------------" << std::endl;
  
-    auto data = generate_data(10);
-    std::vector <double> result(data.size());
+    std::vector<size_t> data_sizes = {100000, 1000000, 5000000};
 
-    my_parallel_transform(data, result, fast_op, 4);
+    for(size_t size : data_sizes)
+    {
+        std::cout << "================================" << std::endl;
+        std::cout << "Data size: " << size << "elements" << std::endl;
+        std::cout << "================================" << std::endl;
+
+        auto data = generate_data(size);
+    std::vector <double> result(size);
+
+    std::cout << "Running tests for this data size..." << std::endl;
+    }
     return 0;
 }
