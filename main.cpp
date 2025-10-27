@@ -1,3 +1,5 @@
+//g++ (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0
+
 #include <iostream>
 #include <execution>
 #include <vector>
@@ -62,7 +64,7 @@ void run_all_tests_for_op(
     unsigned int num_cores
 )
 {
-    std::cout << "--- Тестування операції: " << op_name << " ---" << std::endl;
+    std::cout << "--- Testing: " << op_name << " ---" << std::endl;
     double time_ms;
 
     time_ms = time_operation([&]() {
