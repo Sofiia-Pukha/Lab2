@@ -141,7 +141,7 @@ int main() {
     for(size_t size : data_sizes)
     {
         std::cout << "\n================================================" << std::endl;
-        std::cout << "   DATA SIZE: " << size << " елементів" << std::endl;
+        std::cout << "   DATA SIZE: " << size << "elements" << std::endl;
         std::cout << "================================================" << std::endl;
 
         auto data = generate_data(size);
